@@ -10,7 +10,7 @@ function Header(headerData) {
         url={
           'https://static.vans.eu/ui/www/images/logos/logo.hash-6a49946697efd93990ed1c389cad00d5.svg'
         }
-        text={'Hello Kitty'}
+        text={'Hello Vans'}
       />
       <HeaderMenu />
     </div>
