@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import MainPage from './components/pages/mainPage'
+import MainPage from './components/pages/mainPage';
 import Header from './components/header';
 import Footer from './components/footer';
 
@@ -8,11 +8,11 @@ function App() {
   return (
     <div className="App">
       <header>
-        <Header/>
+        <Header />
       </header>
       <main>
-        <MainPage/>
-        <Footer/>
+        <MainPage />
+        <Footer />
       </main>
     </div>
   );
