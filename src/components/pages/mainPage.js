@@ -21,7 +21,7 @@ function MainPage() {
         <Article img={data.imgOfArticle} title={data.title} text={data.text} />
         <Article img={data.imgOfArticle} title={data.title} text={data.text} />
       </div>
-      <button></button>
+      <button className="main-page-btn">View more</button>
     </div>
   );
 }
