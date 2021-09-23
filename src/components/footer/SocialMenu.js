@@ -2,14 +2,34 @@ import React from 'react';
 import SocMenuItem from './SocialMenuItem';
 
 function SocialMenu(props) {
-  return (
-    <ul>
-      <SocMenuItem text="facebook" />
-      <SocMenuItem text="twitter" />
-      <SocMenuItem text="linkedin" />
-      <SocMenuItem text="google plus" />
-    </ul>
-  );
+  const socMenu = [
+    {
+      favicon: 'fa fa-facebook',
+      text: 'facebook social media link',
+      link: 'https://www.facebook.com/',
+    },
+    {
+      favicon: 'fa fa-twitter',
+      text: 'twitter social media link',
+      link: 'https://www.twitter.com/',
+    },
+    {
+      favicon: 'fa fa-linkedin',
+      text: 'linkedin social media link',
+      link: 'https://www.linkedin.com/',
+    },
+    {
+      favicon: 'fa fa-google',
+      text: 'google social media link',
+      link: 'https://www.google.com/',
+    },
+  ];
+
+  const listItems = socMenu.map((el) => {
+    return <SocMenuItem class="el.favicon" alt={el.text} href="el.link" />;
+  });
+
+  return <ul>{listItems}</ul>;
 }
 
 export default SocialMenu;

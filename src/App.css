@@ -1,12 +1,14 @@
 /* there will be all main styles for root, app and wrappers for pages, footer and header */
 * {
   color: rgb(0, 0, 0);
-  font-family: "Roboto Mono", monospace;
+  font-family: 'Roboto Mono', monospace;
   text-shadow: 1px 1px 5px rgb(255, 255, 255);
   text-align: justify;
 }
 
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   width: 100%;
 }
@@ -23,13 +25,13 @@ html, body, #root {
   align-items: center;
 }
 
-header{
+header {
   height: 10%;
   width: 100%;
   border-bottom: 2px solid rgba(0, 0, 0, 0.425);
 }
 
-main{
+main {
   height: 89%;
   width: 100%;
   display: flex;
@@ -38,14 +40,15 @@ main{
   align-items: center;
 }
 
-.page{
+.page {
   height: 80%;
   width: 90%;
   background-color: antiquewhite;
 }
 
-.footer{
+.footer {
   height: 19%;
   width: 100%;
   border-top: 2px solid rgba(0, 0, 0, 0.425);
 }
+@import url('./components/footer/SocialMenu.css');
