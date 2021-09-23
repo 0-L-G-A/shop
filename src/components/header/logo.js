@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
-function HeaderLogo(props) {
+function Logo(props) {
   return <img src={props.url} alt={props.text} />;
 }
 
-export default HeaderLogo;
+export default Logo;
