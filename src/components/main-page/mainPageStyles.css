@@ -23,29 +23,6 @@
     max-height: 200px;
 }
 
-.carousel-item>div.content-carousel{
-    height: 100%;
-    width: 70%;
-    padding: 0px 0px 0px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    padding-left: 10px;
-}
-
-div.title-carousel{
-    margin: 5px;
-    font-size: 22px;
-    font-weight: 600;
-    text-align: start;
-}
-
-div.text-carousel{
-    margin: 5px;
-    text-align: start;
-}
-
 
 .articles{
     height: 40%;
@@ -80,23 +57,27 @@ div.text-carousel{
     max-height: 100px;
 }
 
-.content-article{
+
+div.content{
+    height: 100%;
+    width: 70%;
+    padding: 0px 0px 0px 20px;
     display: flex;
     flex-direction: column;
     justify-content: start;
-    align-items: center;
+    align-items: flex-start;
+    padding-left: 10px;
 }
 
-.title-article{
-    font-size: 20px;
-    font-weight: 600;
+div.title{
     margin: 5px;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: start;
 }
 
-.text-article{
+div.text{
     font-size: 14px;
-}
-
-.main-page-btn{
-    
+    margin: 5px;
+    text-align: start;
 }
