@@ -1,1 +1,1 @@
-https://github.com/0-L-G-A/shop
+https://0-l-g-a.github.io/shop
