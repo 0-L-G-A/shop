@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import MainPage from './components/pages/mainPage';
-import Header from './components/header/header';
+import Header from './components/header/Header';
 import Footer from './components/footer/footer';
 
 function App() {
@@ -12,8 +12,10 @@ function App() {
       </header>
       <main>
         <MainPage />
-        <Footer />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

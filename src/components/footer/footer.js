@@ -9,9 +9,11 @@ function Footer() {
   };
 
   return (
-    <div className="footer">
-      <FooterContent title={data.title} text={data.text} />
-      <FooterCopyright />
+    <div className="container">
+      <div className="footer">
+        <FooterContent title={data.title} text={data.text} />
+        <FooterCopyright />
+      </div>
     </div>
   );
 }
