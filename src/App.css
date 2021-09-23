@@ -1,53 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap');
+
 /* there will be all main styles for root, app and wrappers for pages, footer and header */
 * {
   color: rgb(0, 0, 0);
-  font-family: 'Roboto Mono', monospace;
+  font-family: 'Stick No Bills', sans-serif;
   text-shadow: 1px 1px 5px rgb(255, 255, 255);
-  text-align: justify;
-}
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
+  text-decoration: none;
 }
 
 .App {
-  text-align: center;
-  margin: 0px 5px;
-  height: 99%;
-  width: 99%;
-  min-height: 600px;
-  min-width: 300px;
   display: flex;
   flex-direction: column;
+}
+.container {
+  max-width: 1200px;
+  display: flex;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
-header {
-  height: 10%;
-  width: 100%;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.425);
-}
-
-main {
-  height: 89%;
-  width: 100%;
+.flex-col {
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
+  justify-content: center;
 }
 
-.page {
-  height: 80%;
-  width: 90%;
+a:hover {
+  text-decoration: underline;
 }
 
 .footer {
-  height: 19%;
-  width: 100%;
   border-top: 2px solid rgba(0, 0, 0, 0.425);
 }
+@import url('./components/header/Header.css');
+
 @import url('./components/footer/SocialMenu.css');
