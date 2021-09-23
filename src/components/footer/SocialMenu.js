@@ -26,7 +26,7 @@ function SocialMenu(props) {
   ];
 
   const listItems = socMenu.map((el) => {
-    return <SocMenuItem class="el.favicon" alt={el.text} href="el.link" />;
+    return <SocMenuItem favicon={el.favicon} text={el.text} link={el.link} />;
   });
 
   return <ul>{listItems}</ul>;

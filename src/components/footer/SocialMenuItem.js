@@ -1,6 +1,7 @@
 import React from 'react';
 
 function SocMenuItem(props) {
+  console.log(props);
   return (
     <li class={props.favicon}>
       <a target="_blank" alt={props.text} href={props.link}></a>
