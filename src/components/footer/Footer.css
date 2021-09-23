@@ -1,0 +1,13 @@
+.FooterContent {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid grey;
+  padding: 0px 0px 20px 0px;
+}
+
+.footer-copyright {
+  padding: 20px 0px 0px 0px;
+}
