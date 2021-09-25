@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Button from '../common-comp/Button';
-import '../catalogPage/catalogPage.css';
-import DropdownItem from '../catalogPage/Dropdown-item';
-import CatalogItem from '../catalogPage/Catalog-item';
+import './css/catalogPage.css';
+import DropdownItem from './catalogPage/Dropdown-item';
+import CatalogItem from './catalogPage/Catalog-item';
 
 function CatalogPage() {
   const [filter1] = useState([

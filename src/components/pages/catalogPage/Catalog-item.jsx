@@ -1,6 +1,6 @@
 import React from 'react';
-import Button from '../common-comp/Button';
-import TextContent from '../common-comp/Content';
+import Button from '../../common-comp/Button';
+import TextContent from '../../common-comp/Content';
 
 function CatalogItem({
   nameItem,
