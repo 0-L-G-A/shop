@@ -14,16 +14,16 @@ function App() {
           <Header />
         </header>
         {/* <main> */}
-          <Switch>
-            <Route path="/catalog">
-              <CatalogPage />
-            </Route>
-            <Route path="/">
-              <MainPage />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/catalog">
+            <CatalogPage />
+          </Route>
+          <Route path="/">
+            <MainPage />
+          </Route>
+        </Switch>
 
-          {/* <CatalogPage/> */}
+        {/* <CatalogPage/> */}
         {/* </main> */}
         <footer>
           <Footer />

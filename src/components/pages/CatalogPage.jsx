@@ -70,41 +70,43 @@ function CatalogPage() {
     },
   ]);
   return (
-    <main className="container">
-      <div className="filter-menu">
-        <div className="filters">
-          <DropdownItem
-            name={'filter1'}
-            clsName={'dropdown'}
-            options={filter1}
-          />
-          <DropdownItem
-            name={'filter1'}
-            clsName={'dropdown'}
-            options={filter1}
-          />
-          <DropdownItem
-            name={'filter1'}
-            clsName={'dropdown'}
-            options={filter1}
-          />
+    <main>
+      <div className="container">
+        <div className="filter-menu">
+          <div className="filters">
+            <DropdownItem
+              name={'filter1'}
+              clsName={'dropdown'}
+              options={filter1}
+            />
+            <DropdownItem
+              name={'filter1'}
+              clsName={'dropdown'}
+              options={filter1}
+            />
+            <DropdownItem
+              name={'filter1'}
+              clsName={'dropdown'}
+              options={filter1}
+            />
+          </div>
+          <Button clsName={'white-btn'} val={'Apply'} />
         </div>
-        <Button clsName={'white-btn'} val={'Apply'} />
-      </div>
-      <div className="catalog-items-wrapper">
-        {items.map((el) => (
-          <CatalogItem
-            nameItem={el.nameItem}
-            imgSrc={el.imgSrc}
-            imgAlt={el.imgAlt}
-            contentTitle={el.contentTitle}
-            contentText={el.contentText}
-            currency={el.currency}
-            price={el.price}
-            clsNameBtn={el.clsNameBtn}
-            valBtn={el.valBtn}
-          />
-        ))}
+        <div className="catalog-items-wrapper">
+          {items.map((el) => (
+            <CatalogItem
+              nameItem={el.nameItem}
+              imgSrc={el.imgSrc}
+              imgAlt={el.imgAlt}
+              contentTitle={el.contentTitle}
+              contentText={el.contentText}
+              currency={el.currency}
+              price={el.price}
+              clsNameBtn={el.clsNameBtn}
+              valBtn={el.valBtn}
+            />
+          ))}
+        </div>
       </div>
     </main>
   );
