@@ -3,6 +3,7 @@ import './css/mainPage.css';
 import Carousel from './main-page/Carousel';
 import Article from './main-page/Article';
 import Button from '../common-comp/Button';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 function MainPage() {
   const [data] = useState({
