@@ -70,7 +70,7 @@ function CatalogPage() {
     },
   ]);
   return (
-    <main>
+    <main className="container">
       <div className="filter-menu">
         <div className="filters">
           <DropdownItem
