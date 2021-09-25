@@ -1,8 +1,7 @@
 import React from 'react';
-import Logo from '../header/logo';
-import import Menu from '../menu/Menu';
+import Logo from '../header/Logo';
+import Menu from '../menu/Menu';
 import TextContent from '../common-comp/content';
-
 
 function FooterContent({ title, text, Menu }) {
   return (
