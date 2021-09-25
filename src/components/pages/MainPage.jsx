@@ -16,8 +16,8 @@ function MainPage() {
   });
 
   return (
-    <div className="container">
-      <div className="page">
+    <main className="container">
+      {/* <div className="page"> */}
         <Carousel
           img={data.imgOfCarousel}
           title={data.title}
@@ -41,8 +41,8 @@ function MainPage() {
           />
         </div>
         <Button clsName={'main-page-btn'} val={'View more'} />
-      </div>
-    </div>
+      {/* </div> */}
+    </main>
   );
 }
 
