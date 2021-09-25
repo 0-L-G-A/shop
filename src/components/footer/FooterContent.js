@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../header/logo';
 import SocialMenu from '../footer/SocialMenu';
-import TextContent from '../main-page/content';
+import TextContent from '../common-comp/content';
 
 function FooterContent({ title, text, socMenu }) {
   return (
