@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../common-comp/Button';
-import '../catalogPage/catalogPageStyles.css';
+import '../catalogPage/catalogPage.css';
 import DropdownItem from '../catalogPage/dropdown-item';
 import CatalogItem from '../catalogPage/catalog-item';
 
