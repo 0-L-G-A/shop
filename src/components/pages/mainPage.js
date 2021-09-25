@@ -4,7 +4,7 @@ import Carousel from '../main-page/carousel';
 import Article from '../main-page/article';
 
 function MainPage() {
-  const [data, setData] = useState({
+  const [data] = useState({
     imgOfCarousel:
       'https://kievdelivery.com/statics/frontend/KievDelivery/img/shop.svg?1562930404',
     imgOfArticle:

@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from '../header/logo';
-import SocialMenu from '../footer/SocialMenu';
+import Logo from '../header/Logo';
+// import Menu from '../menu/Menu';
 import TextContent from '../main-page/content';
 
-function FooterContent({ title, text, socMenu }) {
+function FooterContent({ title, text, Menu }) {
   return (
     <div className="FooterContent flex-row">
       <TextContent title={title} text={text} />
@@ -13,7 +13,7 @@ function FooterContent({ title, text, socMenu }) {
         }
         text={'Hello Vans'}
       />
-      <SocialMenu socMenu={socMenu} />
+      {/* <Menu /> */}
     </div>
   );
 }

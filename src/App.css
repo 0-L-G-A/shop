@@ -46,6 +46,6 @@ a:hover {
 }
 @import url('./components/header/Header.css');
 
-@import url('./components/footer/SocialMenu.css');
+/* @import url('./components/menu/Menu.css'); */
 
 @import url('./components/footer/Footer.css');
