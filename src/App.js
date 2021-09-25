@@ -1,9 +1,9 @@
 import './App.css';
 import React from 'react';
-import MainPage from './components/pages/mainPage';
+import MainPage from './components/pages/MainPage';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
-import CatalogPage from './components/pages/catalogPage';
+import CatalogPage from './components/pages/CatalogPage';
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from '../common-comp/Logo';
 import Menu from '../menu/Menu';
-import TextContent from '../common-comp/content';
+import TextContent from '../common-comp/Content';
 
 function FooterContent({ title, text, menuData }) {
   return (

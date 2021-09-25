@@ -1,5 +1,5 @@
 import React from 'react';
-import TextContent from '../common-comp/content';
+import TextContent from '../common-comp/Content';
 // import 'mainPageStyles.css';
 
 

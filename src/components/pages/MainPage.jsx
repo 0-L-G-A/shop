@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../main-page/mainPageStyles.css';
-import Carousel from '../main-page/carousel';
-import Article from '../main-page/article';
+import Carousel from '../main-page/Carousel';
+import Article from '../main-page/Article';
 import Button from '../common-comp/Button';
 
 function MainPage() {
