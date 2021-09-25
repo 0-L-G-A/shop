@@ -13,7 +13,7 @@ function App() {
         <header>
           <Header />
         </header>
-        <main>
+        {/* <main> */}
           <Switch>
             <Route path="/catalog">
               <CatalogPage />
@@ -24,7 +24,7 @@ function App() {
           </Switch>
 
           {/* <CatalogPage/> */}
-        </main>
+        {/* </main> */}
         <footer>
           <Footer />
         </footer>

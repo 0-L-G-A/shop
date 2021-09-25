@@ -70,7 +70,7 @@ function CatalogPage() {
     },
   ]);
   return (
-    <div className="page">
+    <main>
       <div className="filter-menu">
         <div className="filters">
           <DropdownItem
@@ -106,7 +106,7 @@ function CatalogPage() {
           />
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 
