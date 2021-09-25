@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../header/Logo';
+import Logo from '../common-comp/Logo';
 import Menu from '../menu/Menu';
 import TextContent from '../common-comp/content';
 

@@ -1,8 +1,8 @@
 import React from 'react';
 import Menu from '../menu/Menu';
-import Logo from './Logo';
+import Logo from '../common-comp/Logo';
 
-function Header(headerData) {
+function Header(props) {
   const headerMenuData = [
     {
       liClass: 'fa fa-facebook',
@@ -34,6 +34,7 @@ function Header(headerData) {
         }
         text={'Hello Vans'}
       />
+      <Menu data={headerMenuData} />
     </div>
   );
 }
