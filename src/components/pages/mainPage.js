@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../main-page/mainPageStyles.css';
 import Carousel from '../main-page/carousel';
 import Article from '../main-page/article';
+import Button from '../common-comp/button';
 
 function MainPage() {
   const [data] = useState({
@@ -38,7 +39,7 @@ function MainPage() {
             text={data.text}
           />
         </div>
-        <button className="main-page-btn">View more</button>
+        <Button clsName={"main-page-btn"} val={'View more'}/>
       </div>
     </div>
   );
