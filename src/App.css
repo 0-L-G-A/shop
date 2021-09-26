@@ -54,3 +54,41 @@ a:hover {
 /* @import url('./components/menu/Menu.css'); */
 
 @import url('./components/footer/Footer.css');
+
+
+.btn {
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  align-self: center;
+  text-transform: uppercase;
+  border: none;
+}
+
+.container>button.btn{
+  height: 6vh;
+  width: 20vw;
+}
+
+.filter-menu .btn, .filter-menu select{
+  height: 4vh;
+  width: 10vw;
+}
+
+.catalog-item .btn{
+  height: 4vh;
+  width: 10vw;
+  margin: 5px;
+}
+
+.black-btn{
+  background-color: rgb(24, 24, 24);
+  color: white;
+}
+
+.white-btn{
+  background-color: rgb(250, 250, 250);
+  color: rgb(0, 0, 0);
+  text-shadow: 2px 2px 3px grey;
+  box-shadow: 2px 2px 5px black;
+}

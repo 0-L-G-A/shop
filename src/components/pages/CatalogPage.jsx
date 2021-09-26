@@ -29,7 +29,7 @@ function CatalogPage() {
       contentText: 'buy comfortable, warm winter boots',
       currency: '$',
       price: '50',
-      clsNameBtn: 'black-btn',
+      clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
     },
     {
@@ -41,7 +41,7 @@ function CatalogPage() {
       contentText: 'buy comfortable, warm winter boots',
       currency: '$',
       price: '50',
-      clsNameBtn: 'black-btn',
+      clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
     },
     {
@@ -53,7 +53,7 @@ function CatalogPage() {
       contentText: 'buy comfortable, warm winter boots',
       currency: '$',
       price: '50',
-      clsNameBtn: 'black-btn',
+      clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
     },
     {
@@ -65,7 +65,7 @@ function CatalogPage() {
       contentText: 'buy comfortable, warm winter boots',
       currency: '$',
       price: '50',
-      clsNameBtn: 'black-btn',
+      clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
     },
   ]);
@@ -90,7 +90,7 @@ function CatalogPage() {
               options={filter1}
             />
           </div>
-          <Button clsName={'white-btn'} val={'Apply'} />
+          <Button clsName={'white-btn btn'} val={'Apply'} />
         </div>
         <div className="catalog-items-wrapper">
           {items.map((el) => (
