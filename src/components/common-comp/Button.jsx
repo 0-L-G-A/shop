@@ -1,9 +1,12 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
-function Button({clsName, val}){
-    return(
-        <button className={clsName}>{val}</button>
-    )
+function ShopButton({ clsName, val }) {
+  return (
+    <Button variant="contained" className={clsName}>
+      {val}
+    </Button>
+  );
 }
 
-export default Button;
+export default ShopButton;
