@@ -1,11 +1,32 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+// import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
-function ShopButton({ clsName, val }) {
+function ShopButton({ clsName, val}) {
+  //   const theme = createTheme({
+  //   status: {
+  //     danger: '#e53e3e',
+  //   },
+  //   palette: {
+  //     primary: {
+  //       main: '#0971f1',
+  //       darker: '#053e85',
+  //     },
+  //     neutral: {
+  //       main: '#64748B',
+  //       contrastText: '#fff',
+  //     },
+  //   },
+  // });
   return (
-    <Button variant="contained" className={clsName}>
+    // <ThemeProvider theme={theme}>
+    // <Button variant="contained" color="neutral" className={clsName}>
+    //   {val}
+    // </Button>
+    // </ThemeProvider>
+    <button variant="contained"  className={clsName}>
       {val}
-    </Button>
+    </button>
   );
 }
 

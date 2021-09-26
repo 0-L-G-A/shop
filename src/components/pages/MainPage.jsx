@@ -40,7 +40,7 @@ function MainPage() {
             text={data.text}
           />
         </div>
-        <Button clsName={'main-page-btn'} val={'View more'} />
+        <Button clsName={'btn black-btn'} val={'View more'} />
       </div>
     </main>
   );
