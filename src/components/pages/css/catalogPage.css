@@ -25,7 +25,7 @@ select.dropdown>option{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    max-width: 20vw;
+    max-width: 17vw;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.507);
     border-radius: 10px;
     padding: 5px 10px;
@@ -47,6 +47,11 @@ select.dropdown>option{
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.catalog-item>.content>.text{
+    width: 100%;
+    text-align: start;
 }
 
 .price-wrapper{
