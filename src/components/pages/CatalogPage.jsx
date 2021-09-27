@@ -1,93 +1,151 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Button from '../common-comp/Button';
 import './css/catalogPage.css';
 import DropdownItem from './catalogPage/Dropdown-item';
 import CatalogItem from './catalogPage/Catalog-item';
 
 function CatalogPage() {
-  const [filter1] = useState([
+  const [price] = useState([
     {
-      val: 'f11',
-      name: 'f11',
+      val: 'cheapToExpensive',
+      name: 'cheap => expensive',
     },
     {
-      val: 'f12',
-      name: 'f12',
+      val: 'expensiveToCheap',
+      name: 'expensive => cheap',
+    },
+  ]);
+  const [season] = useState([
+    {
+      val: 'allSeasons',
+      name: 'all seasons',
     },
     {
-      val: 'f13',
-      name: 'f13',
+      val: 'winter',
+      name: 'winter',
+    },
+    {
+      val: 'demiSeason',
+      name: 'demi-season',
+    },
+    {
+      val: 'summer',
+      name: 'summer',
+    },
+  ]);
+  const [color] = useState([
+    {
+      val: 'allColors',
+      name: 'all colors',
+    },
+    {
+      val: 'multicolor',
+      name: 'multicolor',
+    },
+    {
+      val: 'grey',
+      name: 'grey',
+    },
+    {
+      val: 'black',
+      name: 'black',
     },
   ]);
   const [items] = useState([
     {
-      nameItem: 'Awesome Item',
+      nameItem: 'Shoes',
       imgSrc:
         'https://cdn.shopify.com/s/files/1/0419/1525/files/2800x1080-Women-Combat-Black-1_800x533_crop_right.jpg?v=1603303506',
       imgAlt: 'boots',
       contentTitle: 'Winter boots',
-      contentText: 'buy comfortable, warm winter boots',
+      contentText: 'comfortable, waterproof winter boots',
       currency: '$',
-      price: '50',
+      price: '150',
       clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
+      color: "black",
+      season: 'demi-seazon'
     },
     {
-      nameItem: 'Awesome Item',
+      nameItem: 'Shoes',
       imgSrc:
-        'https://cdn.shopify.com/s/files/1/0419/1525/files/2800x1080-Women-Combat-Black-1_800x533_crop_right.jpg?v=1603303506',
+        'https://www.supershoes.com/common/images/categories/Womens-Dress-header-mobile.jpg',
       imgAlt: 'boots',
-      contentTitle: 'Winter boots',
-      contentText: 'buy comfortable, warm winter boots',
+      contentTitle: 'Shoes for women',
+      contentText: 'uncomfortable, cheap, high-heeled shoes',
       currency: '$',
-      price: '50',
+      price: '30',
       clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
+      color: "black",
+      season: 'summer'
     },
     {
-      nameItem: 'Awesome Item',
+      nameItem: 'Shoes',
       imgSrc:
-        'https://cdn.shopify.com/s/files/1/0419/1525/files/2800x1080-Women-Combat-Black-1_800x533_crop_right.jpg?v=1603303506',
+        'https://images.ua.prom.st/2873552968_w640_h640_2873552968.jpg',
       imgAlt: 'boots',
-      contentTitle: 'Winter boots',
-      contentText: 'buy comfortable, warm winter boots',
+      contentTitle: 'Sneakers',
+      contentText: 'the most comgortable sneakers in the world',
       currency: '$',
-      price: '50',
+      price: '100',
       clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
+      color: "multicolor",
+      season: 'demi-seazon'
     },
     {
-      nameItem: 'Awesome Item',
+      nameItem: 'Shoes',
       imgSrc:
-        'https://cdn.shopify.com/s/files/1/0419/1525/files/2800x1080-Women-Combat-Black-1_800x533_crop_right.jpg?v=1603303506',
+        'https://www.gannett-cdn.com/presto/2020/11/27/USAT/0cafc0d7-0c4c-4be6-b83e-bd62229f04a2-21.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp',
       imgAlt: 'boots',
       contentTitle: 'Winter boots',
-      contentText: 'buy comfortable, warm winter boots',
+      contentText: 'cheap, warm, comfortable autumn boots',
       currency: '$',
-      price: '50',
+      price: '80',
       clsNameBtn: 'black-btn btn',
       valBtn: 'View more',
+      color: "grey",
+      season: 'winter'
     },
   ]);
+  const [activeFilters, setActiveFilters] = useState({
+    season: 'allSeason',
+    color: 'allColors',
+    price: 'cheapToExpensive'
+  })
+  const handleSelect = ({name, selectedOption}) => {
+    setActiveFilters({...activeFilters, [name]:selectedOption})
+  }
+
+  // useEffect(() => {
+  //   items.filter((el) => {
+  //     el
+  //   })
+  // },[activeFilters])
+
   return (
     <main>
       <div className="container">
         <div className="filter-menu">
           <div className="filters">
             <DropdownItem
-              name={'filter1'}
+              handleSelect={handleSelect}
+              name={'price'}
               clsName={'dropdown'}
-              options={filter1}
+              options={price}
             />
             <DropdownItem
-              name={'filter1'}
+            handleSelect={handleSelect}
+              name={'season'}
               clsName={'dropdown'}
-              options={filter1}
+              options={season}
             />
             <DropdownItem
-              name={'filter1'}
+            handleSelect={handleSelect}
+              name={'color'}
               clsName={'dropdown'}
-              options={filter1}
+              options={color}
             />
           </div>
           <Button clsName={'white-btn btn'} val={'Apply'} />

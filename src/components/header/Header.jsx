@@ -1,8 +1,10 @@
 import React from 'react';
 import Menu from '../menu/Menu';
 import Logo from '../common-comp/Logo';
+import { useLocation } from 'react-router-dom';
 
 function Header(props) {
+  let location = useLocation();
   const headerMenuData = [
     {
       liClass: '',
@@ -33,6 +35,7 @@ function Header(props) {
         text={'Hello Vans'}
         height="50px"
       />
+      {location.pathname === '/catalog' ? <input className="search" type="search" placeholder="🔎"></input> : null}
       <Menu data={headerMenuData} />
     </div>
   );
