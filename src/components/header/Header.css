@@ -20,3 +20,8 @@ header ul li a {
 header ul li a:hover {
   color: #b93b3b;
 }
+
+.search{
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
