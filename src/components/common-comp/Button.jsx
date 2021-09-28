@@ -2,7 +2,7 @@ import React from 'react';
 // import Button from '@material-ui/core/Button';
 // import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 
-function ShopButton({ clsName, val}) {
+function ShopButton({ clsName, val, onClick}) {
   //   const theme = createTheme({
   //   status: {
   //     danger: '#e53e3e',
@@ -24,7 +24,7 @@ function ShopButton({ clsName, val}) {
     //   {val}
     // </Button>
     // </ThemeProvider>
-    <button variant="contained"  className={clsName}>
+    <button className={clsName} onClick={onClick}>
       {val}
     </button>
   );

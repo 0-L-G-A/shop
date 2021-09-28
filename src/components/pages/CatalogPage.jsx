@@ -3,127 +3,38 @@ import Button from '../common-comp/Button';
 import './css/catalogPage.css';
 import DropdownItem from './catalogPage/Dropdown-item';
 import CatalogItem from './catalogPage/Catalog-item';
+import {price, color, season} from '../../data/filters';
+import { items } from '../../data/items';
 
 function CatalogPage() {
-  const [price] = useState([
-    {
-      val: 'cheapToExpensive',
-      name: 'cheap => expensive',
-    },
-    {
-      val: 'expensiveToCheap',
-      name: 'expensive => cheap',
-    },
-  ]);
-  const [season] = useState([
-    {
-      val: 'allSeasons',
-      name: 'all seasons',
-    },
-    {
-      val: 'winter',
-      name: 'winter',
-    },
-    {
-      val: 'demiSeason',
-      name: 'demi-season',
-    },
-    {
-      val: 'summer',
-      name: 'summer',
-    },
-  ]);
-  const [color] = useState([
-    {
-      val: 'allColors',
-      name: 'all colors',
-    },
-    {
-      val: 'multicolor',
-      name: 'multicolor',
-    },
-    {
-      val: 'grey',
-      name: 'grey',
-    },
-    {
-      val: 'black',
-      name: 'black',
-    },
-  ]);
-  const [items] = useState([
-    {
-      nameItem: 'Shoes',
-      imgSrc:
-        'https://cdn.shopify.com/s/files/1/0419/1525/files/2800x1080-Women-Combat-Black-1_800x533_crop_right.jpg?v=1603303506',
-      imgAlt: 'boots',
-      contentTitle: 'Winter boots',
-      contentText: 'comfortable, waterproof winter boots',
-      currency: '$',
-      price: '150',
-      clsNameBtn: 'black-btn btn',
-      valBtn: 'View more',
-      color: "black",
-      season: 'demi-seazon'
-    },
-    {
-      nameItem: 'Shoes',
-      imgSrc:
-        'https://www.supershoes.com/common/images/categories/Womens-Dress-header-mobile.jpg',
-      imgAlt: 'boots',
-      contentTitle: 'Shoes for women',
-      contentText: 'uncomfortable, cheap, high-heeled shoes',
-      currency: '$',
-      price: '30',
-      clsNameBtn: 'black-btn btn',
-      valBtn: 'View more',
-      color: "black",
-      season: 'summer'
-    },
-    {
-      nameItem: 'Shoes',
-      imgSrc:
-        'https://images.ua.prom.st/2873552968_w640_h640_2873552968.jpg',
-      imgAlt: 'boots',
-      contentTitle: 'Sneakers',
-      contentText: 'the most comgortable sneakers in the world',
-      currency: '$',
-      price: '100',
-      clsNameBtn: 'black-btn btn',
-      valBtn: 'View more',
-      color: "multicolor",
-      season: 'demi-seazon'
-    },
-    {
-      nameItem: 'Shoes',
-      imgSrc:
-        'https://www.gannett-cdn.com/presto/2020/11/27/USAT/0cafc0d7-0c4c-4be6-b83e-bd62229f04a2-21.jpg?width=660&height=372&fit=crop&format=pjpg&auto=webp',
-      imgAlt: 'boots',
-      contentTitle: 'Winter boots',
-      contentText: 'cheap, warm, comfortable autumn boots',
-      currency: '$',
-      price: '80',
-      clsNameBtn: 'black-btn btn',
-      valBtn: 'View more',
-      color: "grey",
-      season: 'winter'
-    },
-  ]);
+  const [mapedItems, setMapedItems] = useState(items);
   const [activeFilters, setActiveFilters] = useState({
-    season: 'allSeason',
-    color: 'allColors',
-    price: 'cheapToExpensive'
+    season: 'all seasons',
+    color: 'all colors',
+    price: 'cheap => expensive'
   })
   const handleSelect = ({name, selectedOption}) => {
     setActiveFilters({...activeFilters, [name]:selectedOption})
   }
 
-  // useEffect(() => {
-  //   items.filter((el) => {
-  //     el
-  //   })
-  // },[activeFilters])
-
+  const handleButton = () => {
+    let products = JSON.parse(JSON.stringify(items));
+    if(activeFilters.season !== 'all seasons'){
+      products = products.filter((el) => el.season === activeFilters.season)
+    }
+    if(activeFilters.color !== 'all colors'){
+      products = products.filter((el) => el.color === activeFilters.color )
+    }
+    if(activeFilters.price === 'cheap => expensive'){
+      products.sort((a, b) => a.price - b.price)
+    }else{
+      products.sort((a, b) => b.price - a.price)
+    }
+    setMapedItems(products)
+  }
+  useEffect(() => {
+    setMapedItems(items)
+  },[])
   return (
     <main>
       <div className="container">
@@ -148,10 +59,10 @@ function CatalogPage() {
               options={color}
             />
           </div>
-          <Button clsName={'white-btn btn'} val={'Apply'} />
+          <Button clsName={'white-btn btn'} val={'Apply'} onClick={handleButton}/>
         </div>
         <div className="catalog-items-wrapper">
-          {items.map((el) => (
+          {mapedItems.map((el) => (
             <CatalogItem
               nameItem={el.nameItem}
               imgSrc={el.imgSrc}
