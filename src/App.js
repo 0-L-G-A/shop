@@ -5,9 +5,11 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import CatalogPage from './components/pages/CatalogPage';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {StateProvider} from './context/Context'
 
 function App() {
   return (
+    <StateProvider>
     <Router>
       <div className="App">
         <header>
@@ -30,6 +32,7 @@ function App() {
         </footer>
       </div>
     </Router>
+    </StateProvider>
   );
 }
 
