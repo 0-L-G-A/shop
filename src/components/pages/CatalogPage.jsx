@@ -5,27 +5,26 @@ import DropdownItem from './catalogPage/Dropdown-item';
 import CatalogItem from './catalogPage/Catalog-item';
 import {price, color, season} from '../../data/filters';
 import { items } from '../../data/items';
+import {useData} from '../../context/Context';
 
 function CatalogPage() {
+  const {filters, setFilters} = useData();
+  console.log(filters)
+  console.log(setFilters)
   const [mapedItems, setMapedItems] = useState(items);
-  const [activeFilters, setActiveFilters] = useState({
-    season: 'all seasons',
-    color: 'all colors',
-    price: 'cheap => expensive'
-  })
   const handleSelect = ({name, selectedOption}) => {
-    setActiveFilters({...activeFilters, [name]:selectedOption})
+    setFilters({...filters, [name]:selectedOption})
   }
 
   const handleButton = () => {
     let products = JSON.parse(JSON.stringify(items));
-    if(activeFilters.season !== 'all seasons'){
-      products = products.filter((el) => el.season === activeFilters.season)
+    if(filters.season !== 'all seasons'){
+      products = products.filter((el) => el.season === filters.season)
     }
-    if(activeFilters.color !== 'all colors'){
-      products = products.filter((el) => el.color === activeFilters.color )
+    if(filters.color !== 'all colors'){
+      products = products.filter((el) => el.color === filters.color )
     }
-    if(activeFilters.price === 'cheap => expensive'){
+    if(filters.price === 'cheap => expensive'){
       products.sort((a, b) => a.price - b.price)
     }else{
       products.sort((a, b) => b.price - a.price)
