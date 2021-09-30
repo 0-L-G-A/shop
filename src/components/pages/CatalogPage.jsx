@@ -4,20 +4,16 @@ import './css/catalogPage.css';
 import DropdownItem from './catalogPage/Dropdown-item';
 import CatalogItem from './catalogPage/Catalog-item';
 import {price, color, season} from '../../data/filters';
-import { items } from '../../data/items';
 import {useData} from '../../context/Context';
 
 function CatalogPage() {
-  const {filters, setFilters} = useData();
-  console.log(filters)
-  console.log(setFilters)
-  const [mapedItems, setMapedItems] = useState(items);
+  const {filters, setFilters, initialItems, sortedItems, filterItems} = useData();
   const handleSelect = ({name, selectedOption}) => {
     setFilters({...filters, [name]:selectedOption})
   }
 
   const handleButton = () => {
-    let products = JSON.parse(JSON.stringify(items));
+    let products = JSON.parse(JSON.stringify(initialItems));
     if(filters.season !== 'all seasons'){
       products = products.filter((el) => el.season === filters.season)
     }
@@ -29,11 +25,10 @@ function CatalogPage() {
     }else{
       products.sort((a, b) => b.price - a.price)
     }
-    setMapedItems(products)
+    // setMapedItems(products)
+    filterItems(products);
   }
-  useEffect(() => {
-    setMapedItems(items)
-  },[])
+
   return (
     <main>
       <div className="container">
@@ -61,7 +56,7 @@ function CatalogPage() {
           <Button clsName={'white-btn btn'} val={'Apply'} onClick={handleButton}/>
         </div>
         <div className="catalog-items-wrapper">
-          {mapedItems.map((el) => (
+          {sortedItems.map((el) => (
             <CatalogItem
               nameItem={el.nameItem}
               imgSrc={el.imgSrc}
