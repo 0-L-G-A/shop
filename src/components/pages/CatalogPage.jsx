@@ -6,6 +6,7 @@ import CatalogItem from './catalogPage/Catalog-item';
 import {price, color, season} from '../../data/filters';
 import {useData} from '../../context/Context';
 
+
 function CatalogPage() {
   const {filters, setFilters, initialItems, sortedItems, filterItems} = useData();
   const handleSelect = ({name, selectedOption}) => {
@@ -67,6 +68,7 @@ function CatalogPage() {
               price={el.price}
               clsNameBtn={el.clsNameBtn}
               valBtn={el.valBtn}
+              el={el}
             />
           ))}
         </div>

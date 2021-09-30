@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import { useData } from '../../../context/Context';
 import Button from '../../common-comp/Button';
 import TextContent from '../../common-comp/Content';
 
@@ -12,7 +14,10 @@ function CatalogItem({
   price,
   clsNameBtn,
   valBtn,
+  el
 }) {
+  const {setActiveItem} = useData();
+
   return (
     <div className="catalog-item">
       <div className="catalog-item-name">{nameItem}</div>
@@ -24,7 +29,9 @@ function CatalogItem({
           {currency}, {price}
         </div>
       </div>
-      <Button clsName={clsNameBtn} val={valBtn} />
+      <Link to="/item">
+        <Button clsName={clsNameBtn} val={valBtn} onClick={() => setActiveItem(el)}/>
+      </Link>
     </div>
   );
 }

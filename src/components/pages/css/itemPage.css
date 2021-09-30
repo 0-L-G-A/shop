@@ -1,0 +1,81 @@
+.item-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+}
+
+.up{
+    align-items: flex-start;
+}
+
+.down{
+    align-items: flex-end;
+    margin-top: 50px;
+}
+
+.item-page-img{
+    height: 40vh;
+    width: 28vw;
+    margin-right: 40px;
+}
+
+.info-item-page-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    height: 40vh;
+    width: 65vw;
+}
+
+.characteristics{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.char{
+    text-align: center;
+    background-color: black;
+    color: cornsilk;
+    border-radius: 20%;
+    padding: 5px 10px;
+    margin-right: 20px;
+}
+
+.info-item-page-wrap>.content>.title{
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+
+.info-item-page-wrap>.content>.text{
+    font-size: 1.2rem;
+}
+
+.input-and-select{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.input-and-select h5{
+    margin: 10px 0px 5px 0px;
+}
+
+.price{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(172, 13, 44);
+}
+
+.input-and-select input, .input-and-select select{
+    margin-right: 20px;
+    width: 150px;
+    height: 20px;
+}
+
+.buttons button{
+    margin-right: 20px;
+    font-size: 1.2rem;
+}
