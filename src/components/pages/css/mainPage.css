@@ -2,16 +2,9 @@
 .carousel-item {
   display: flex;
   flex-direction: row;
-  padding: 20px;
+  padding: 5px 0px;
   overflow: hidden;
   justify-content: space-between;
-  align-items: center;
-}
-
-.page {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -20,6 +13,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  width: 30%;
+  margin-right: 20px;
+}
+
+.carousel-item .text{
+  text-align: justify;
 }
 
 .img-carousel > img {
@@ -33,6 +32,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 30px;
+  flex-wrap: wrap;
 }
 
 .article {
@@ -41,6 +41,13 @@
   justify-content: flex-start;
   align-items: center;
   overflow: hidden;
+  width: 24vw;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.article .text{
+  text-align: justify;
 }
 
 .img-article {
@@ -51,7 +58,8 @@
 }
 
 .img-article > img {
-  max-height: 150px;
+  height: 40vh;
+  width: 22vw;
 }
 
 div.title {
