@@ -14,7 +14,7 @@ export const headerMenuData = [
     {
       liClass: '',
       altText: 'Cart link',
-      hrefUrl: '/cart ',
+      hrefUrl: '/cart',
       atext: 'Cart',
     },
 ];

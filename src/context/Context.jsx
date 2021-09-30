@@ -11,6 +11,7 @@ export const useData = () => {
 // const HIDE_ALERT = 'hide'
 const SET_FILTERS = 'setFilters'
 const FILTER_ITEMS = 'filterItems'
+const SET_ACTIVE_ITEM = 'setActiveItems'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -18,6 +19,7 @@ const reducer = (state, action) => {
     // case HIDE_ALERT: return {...state, visible: false}
     case SET_FILTERS: return {...state, filters: action.newFilters}
     case FILTER_ITEMS: return {...state, sortedItems: action.newItems}
+    case SET_ACTIVE_ITEM: return {...state, activeItem: action.activeItem}
     default: return state
   }
 }
@@ -38,6 +40,7 @@ export const StateProvider = ({ children }) => {
 //   const hide = () => dispatch({ type: HIDE_ALERT })
   const setFilters = (newFilters) => dispatch({type: SET_FILTERS, newFilters})
   const filterItems = (newItems) => dispatch({type: FILTER_ITEMS, newItems})
+  const setActiveItem = (activeItem) => dispatch({type: SET_ACTIVE_ITEM, activeItem})
 
   return (
     <Context.Provider value={{
@@ -47,7 +50,8 @@ export const StateProvider = ({ children }) => {
     filters: state.filters,
     initialItems: state.initialItems,
     sortedItems: state.sortedItems,
-    setFilters, filterItems,
+    setFilters, filterItems, setActiveItem,
+    activeItem: state.activeItem 
     }}>
         { children }
     </Context.Provider>
