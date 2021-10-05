@@ -1,5 +1,4 @@
 import React, {useContext, useReducer} from 'react';
-import { items } from '../data/items'
 
 const Context = React.createContext()
 
@@ -7,18 +6,14 @@ export const useData = () => {
   return useContext(Context)
 }
 
-// const SHOW_ALERT = 'show'
-// const HIDE_ALERT = 'hide'
 const SET_FILTERS = 'setFilters'
-const FILTER_ITEMS = 'filterItems'
+const SET_ITEMS = 'setItems'
 const SET_ACTIVE_ITEM = 'setActiveItems'
 
 const reducer = (state, action) => {
   switch (action.type) {
-    // case SHOW_ALERT: return {...state, visible: true, text: action.text}
-    // case HIDE_ALERT: return {...state, visible: false}
     case SET_FILTERS: return {...state, filters: action.newFilters}
-    case FILTER_ITEMS: return {...state, sortedItems: action.newItems}
+    case SET_ITEMS: return {...state, items: action.newItems}
     case SET_ACTIVE_ITEM: return {...state, activeItem: action.activeItem}
     default: return state
   }
@@ -31,27 +26,20 @@ export const StateProvider = ({ children }) => {
         color: 'all colors',
         price: 'cheap => expensive'
     },
-    initialItems: items,
-    sortedItems: JSON.parse(JSON.stringify(items)),
+    items: null,
 
   })
 
-//   const show = text => dispatch({ type: SHOW_ALERT, text })
-//   const hide = () => dispatch({ type: HIDE_ALERT })
   const setFilters = (newFilters) => dispatch({type: SET_FILTERS, newFilters})
-  const filterItems = (newItems) => dispatch({type: FILTER_ITEMS, newItems})
+  const setItems = (newItems) => dispatch({type: SET_ITEMS, newItems})
   const setActiveItem = (activeItem) => dispatch({type: SET_ACTIVE_ITEM, activeItem})
 
   return (
     <Context.Provider value={{
-    //   visible: state.visible,
-    //   text: state.text,
-    //   show, hide
     filters: state.filters,
-    initialItems: state.initialItems,
-    sortedItems: state.sortedItems,
-    setFilters, filterItems, setActiveItem,
-    activeItem: state.activeItem 
+    items: state.items,
+    activeItem: state.activeItem,
+    setFilters, setItems, setActiveItem,
     }}>
         { children }
     </Context.Provider>
