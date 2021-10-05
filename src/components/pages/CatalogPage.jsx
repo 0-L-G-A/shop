@@ -12,7 +12,7 @@ function CatalogPage() {
   const {filters, setFilters, items, setItems} = useData();
   
   useEffect(() => {
-    axios.get("http://localhost:3001/", {params: filters}).then((response) => setItems(response.data.products))
+    axios.get("http://localhost:3001/items", {params: filters}).then((response) => setItems(response.data.products))
   }, [])
 
   const handleSelect = ({name, selectedOption}) => {
@@ -20,9 +20,9 @@ function CatalogPage() {
   }
 
   const handleButton = async () => {
-    const data = await axios.get("http://localhost:3001/", {params: filters})
-    setItems(data.data.products);
-    return data.data.products;
+    const response = await axios.get("http://localhost:3001/items", {params: filters})
+    setItems(response.data.products);
+    return response.data.products;
   }
   return (
     <main>
@@ -64,7 +64,8 @@ function CatalogPage() {
               valBtn={el.valBtn}
               el={el}
             />
-          )) : <h1>Loader...</h1>}
+          )) :
+          <div class="loader">Loading...</div>}
         </div>
       </div>
     </main>
