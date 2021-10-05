@@ -4,16 +4,16 @@ import Logo from '../common-comp/Logo';
 import { useLocation } from 'react-router-dom';
 import {headerMenuData} from '../../data/headerMenuData';
 import {useData} from '../../context/Context';
+import axios from 'axios';
 
 function Header(props) {
   let location = useLocation();
-  const {filterItems, initialItems} = useData();
+  const {setItems, filters} = useData();
   
-  const handleSearch = (value) => {
-    let filtered = initialItems.filter((item) => (item.contentTitle).includes(value) || (item.contentText).includes(value))
-    filterItems(filtered);
-    // console.log(filtered)
-    
+  const handleSearch = async (value) => {
+    const response = await axios.get("http://localhost:3001/items", {params: filters})
+    let filtered = response.data.products.filter((item) => (item.contentTitle).includes(value) || (item.contentText).includes(value))
+    setItems(filtered);
   }
   return (
     <div className="header container flex-row">
