@@ -5,31 +5,25 @@ import DropdownItem from './catalogPage/Dropdown-item';
 import CatalogItem from './catalogPage/Catalog-item';
 import {price, color, season} from '../../data/filters';
 import {useData} from '../../context/Context';
+import axios from 'axios';
 
 
 function CatalogPage() {
-  const {filters, setFilters, initialItems, sortedItems, filterItems} = useData();
+  const {filters, setFilters, items, setItems} = useData();
+  
+  useEffect(() => {
+    axios.get("http://localhost:3001/", {params: filters}).then((response) => setItems(response.data.products))
+  }, [])
+
   const handleSelect = ({name, selectedOption}) => {
     setFilters({...filters, [name]:selectedOption})
   }
 
-  const handleButton = () => {
-    let products = JSON.parse(JSON.stringify(initialItems));
-    if(filters.season !== 'all seasons'){
-      products = products.filter((el) => el.season === filters.season)
-    }
-    if(filters.color !== 'all colors'){
-      products = products.filter((el) => el.color === filters.color )
-    }
-    if(filters.price === 'cheap => expensive'){
-      products.sort((a, b) => a.price - b.price)
-    }else{
-      products.sort((a, b) => b.price - a.price)
-    }
-    // setMapedItems(products)
-    filterItems(products);
+  const handleButton = async () => {
+    const data = await axios.get("http://localhost:3001/", {params: filters})
+    setItems(data.data.products);
+    return data.data.products;
   }
-
   return (
     <main>
       <div className="container">
@@ -57,7 +51,7 @@ function CatalogPage() {
           <Button clsName={'white-btn btn'} val={'Apply'} onClick={handleButton}/>
         </div>
         <div className="catalog-items-wrapper">
-          {sortedItems.map((el) => (
+          {items ? items.map((el) => (
             <CatalogItem
               nameItem={el.nameItem}
               imgSrc={el.imgSrc}
@@ -70,7 +64,7 @@ function CatalogPage() {
               valBtn={el.valBtn}
               el={el}
             />
-          ))}
+          )) : <h1>Loader...</h1>}
         </div>
       </div>
     </main>

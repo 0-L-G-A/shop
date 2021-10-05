@@ -1,4 +1,4 @@
-export const items = [
+const items = [
     {
       id: 1,
       nameItem: 'Shoes',
@@ -161,3 +161,5 @@ export const items = [
     },
     
 ];
+
+module.exports = items;
